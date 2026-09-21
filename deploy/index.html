@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Innovation Intelligence Hackathon — UC Berkeley, Oct 5–11 2026</title>
+<meta name="description" content="A selective startup hackathon at UC Berkeley. Build for a week, then demo live to founders and investors on October 11.">
+<meta property="og:title" content="Innovation Intelligence Hackathon">
+<meta property="og:description" content="A selective startup hackathon at UC Berkeley. Build week Oct 5–10, Demo Day Oct 11.">
+<meta property="og:type" content="website">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="_ds/industry-ca6bcc05-1658-40dd-9e80-0944f5b38738/styles.css">
+<script src="_ds/industry-ca6bcc05-1658-40dd-9e80-0944f5b38738/_ds_bundle.js"></script>
+<style>
+  body { margin: 0; -webkit-font-smoothing: antialiased;
+    --font-heading: 'Space Grotesk', sans-serif;
+    --font-body: 'Space Grotesk', system-ui, sans-serif;
+    --color-accent: #17181a;
+    --color-accent-100: #f0f0f1;
+    --color-accent-200: #dedee0;
+    --color-accent-300: #b8b9bb;
+    --color-accent-400: #86888b;
+    --color-accent-500: #4c4e51;
+    --color-accent-600: #2c2e30;
+    --color-accent-700: #1d1f20;
+    --color-accent-800: #141517;
+    --color-accent-900: #0c0d0e;
+    --color-accent-2: #17181a;
+    --color-accent-2-300: #b8b9bb;
+    --color-accent-2-500: #4c4e51;
+    --color-accent-2-700: #1d1f20;
+    --color-accent-2-900: #0c0d0e;
+    --color-bg: #fbfbfc;
+  }
+  a { color: var(--color-accent-700); text-underline-offset: 3px; }
+  a:hover { color: var(--color-accent-500); }
+  summary::-webkit-details-marker { display: none; }
+  summary { list-style: none; }
+  @keyframes riseIn { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+  @keyframes lineUp { from { transform: translateY(105%); } to { transform: translateY(0); } }
+  @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+  @keyframes blink { 0%, 60% { opacity: 1; } 61%, 100% { opacity: 0.25; } }
+  .mask-line { display: block; overflow: hidden; }
+  .mask-line > span { display: block; animation: lineUp 900ms cubic-bezier(.16,.84,.44,1) both; }
+  .row-fx { position: relative; transition: background 260ms cubic-bezier(.16,.84,.44,1), color 260ms ease; }
+  .row-fx .row-idx { transition: transform 320ms cubic-bezier(.16,.84,.44,1), opacity 260ms ease; }
+  .row-fx .row-arrow { opacity: 0; transform: translateX(-8px); transition: opacity 260ms ease, transform 320ms cubic-bezier(.16,.84,.44,1); }
+  .row-fx:hover { background: #0c0d0e; color: #fbfbfc; }
+  .row-fx:hover .row-sub, .row-fx:hover .row-cap { color: rgba(251,251,252,.62) !important; }
+  .row-fx:hover .row-idx { transform: translateX(6px); color: rgba(251,251,252,.62) !important; }
+  .row-fx:hover .row-arrow { opacity: 1; transform: translateX(0); }
+  .bar-fill { transform-origin: left; transform: scaleX(0); transition: transform 1100ms cubic-bezier(.16,.84,.44,1); }
+  [data-revealed="1"] .bar-fill { transform: scaleX(1); }
+  .lift { transition: transform 300ms cubic-bezier(.16,.84,.44,1), background 300ms ease; }
+  .lift:hover { transform: translateY(-4px); background: #f4f4f5; }
+  @media (prefers-reduced-motion: reduce) { .mask-line > span, .marquee-track { animation: none !important; } .bar-fill { transition: none; transform: scaleX(1); } }
+</style>
+</helmet>
+
+<div style="background: var(--color-bg); color: var(--color-text); font-family: var(--font-body); min-height: 100vh;">
+
+  <div id="scrollbar-track" style="position: fixed; top: 0; left: 0; right: 0; height: 2px; z-index: 60; background: transparent; pointer-events: none;">
+    <div id="scrollbar-fill" style="height: 2px; width: 0%; background: #0c0d0e;"></div>
+  </div>
+
+  <header style="position: sticky; top: 0; z-index: 40; background: color-mix(in srgb, var(--color-bg) 88%, transparent); backdrop-filter: blur(10px); border-bottom: 1px solid var(--color-divider);">
+    <nav style="max-width: 1240px; margin: 0 auto; padding: 14px 28px; display: flex; align-items: center; gap: 28px; flex-wrap: wrap;">
+      <a href="#" onClick="{{ goHome }}" style="text-decoration: none; color: inherit; margin-right: auto; display: flex; align-items: baseline; gap: 10px;">
+        <span style="font-family: var(--font-heading); font-weight: 600; font-size: 19px; letter-spacing: -0.01em; text-transform: uppercase;">Innovation Intelligence</span>
+        <span style="font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-neutral-600);">Berkeley</span>
+      </a>
+      <div style="display: flex; align-items: center; gap: 22px; flex-wrap: wrap; font-size: 13.5px;">
+        <a href="#thesis" onClick="{{ goThesis }}" style="text-decoration: none; color: var(--color-neutral-700);" style-hover="color: var(--color-text);">About</a>
+        <a href="#tracks" onClick="{{ goTracks }}" style="text-decoration: none; color: var(--color-neutral-700);" style-hover="color: var(--color-text);">Tracks</a>
+        <a href="#format" onClick="{{ goFormat }}" style="text-decoration: none; color: var(--color-neutral-700);" style-hover="color: var(--color-text);">Format</a>
+        <a href="#prizes" onClick="{{ goPrizes }}" style="text-decoration: none; color: var(--color-neutral-700);" style-hover="color: var(--color-text);">What wins</a>
+        <a href="#judging" onClick="{{ goJudging }}" style="text-decoration: none; color: var(--color-neutral-700);" style-hover="color: var(--color-text);">Judging</a>
+        <a href="#faq" onClick="{{ goFaq }}" style="text-decoration: none; color: var(--color-neutral-700);" style-hover="color: var(--color-text);">FAQ</a>
+        
+        <a href="#" onClick="{{ goAbout }}" style="text-decoration: none; color: var(--color-neutral-700);" style-hover="color: var(--color-text);">Organizers</a>
+        <a href="https://partiful.com/e/RooXgfy6sLQdTwi53NXi" target="_blank" rel="noopener" class="btn btn-primary" style="text-decoration: none; padding: 8px 18px; font-size: 13.5px; letter-spacing: 0.02em;">Apply Now</a>
+      </div>
+    </nav>
+  </header>
+
+  <sc-if value="{{ isHome }}" hint-placeholder-val="{{ true }}">
+  <main>
+
+    <section style="background: #0c0d0e; color: #fbfbfc; padding: 0 0 4px;">
+      <div style="max-width: 1240px; margin: 0 auto; padding: 84px 28px 76px;">
+        <div style="display: flex; align-items: center; gap: 14px; font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(251,251,252,.6);">
+          <span style="display: inline-flex; align-items: center; gap: 8px;"><span style="width: 7px; height: 7px; background: #fbfbfc; border-radius: 50%; animation: blink 2.4s steps(1) infinite;"></span>Applications open</span>
+          <span style="width: 26px; height: 1px; background: rgba(251,251,252,.28);"></span>
+          <span>Berkeley, CA</span>
+          <span style="width: 26px; height: 1px; background: rgba(251,251,252,.28);"></span>
+          <span>SF Tech Week</span>
+        </div>
+        <h1 style="font-family: var(--font-heading); font-weight: 600; font-size: clamp(46px, 8.6vw, 124px); line-height: 0.9; letter-spacing: -0.03em; margin: 30px 0 0; text-transform: uppercase;">
+          <span class="mask-line"><span style="animation-delay: 40ms;">Innovation</span></span>
+          <span class="mask-line"><span style="animation-delay: 140ms;">Intelligence</span></span>
+          <span class="mask-line"><span style="animation-delay: 240ms; color: rgba(251,251,252,.5);">Hackathon</span></span>
+        </h1>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; margin-top: 44px; align-items: end;">
+          <div>
+            <div style="font-family: var(--font-heading); font-size: clamp(21px, 2.4vw, 30px); line-height: 1.12; margin: 0 0 14px;">Find the problem worth solving.</div>
+            <p style="font-size: 16.5px; line-height: 1.6; color: rgba(251,251,252,.68); max-width: 50ch; margin: 0;">A selective startup hackathon. Build for a week, then demo live to founders and investors on October&nbsp;11.</p>
+          </div>
+          <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+            <a href="https://partiful.com/e/RooXgfy6sLQdTwi53NXi" target="_blank" rel="noopener" style="text-decoration: none; padding: 14px 28px; font-size: 15px; background: #fbfbfc; color: #0c0d0e; font-family: var(--font-heading); letter-spacing: 0.02em;" style-hover="background: #d6d7d9;">Apply Now</a>
+            <a href="#tracks" onClick="{{ goTracks }}" style="text-decoration: none; padding: 14px 28px; font-size: 15px; border: 1px solid rgba(251,251,252,.4); color: #fbfbfc; font-family: var(--font-heading); letter-spacing: 0.02em;" style-hover="border-color: #fbfbfc;">View Tracks</a>
+          </div>
+        </div>
+      </div>
+
+      <div style="overflow: hidden; border-top: 1px solid rgba(251,251,252,.18); border-bottom: 1px solid rgba(251,251,252,.18); padding: 12px 0;">
+        <div class="marquee-track" style="display: flex; gap: 0; width: max-content; animation: marquee 34s linear infinite; font-family: var(--font-heading); font-size: 13px; letter-spacing: 0.22em; text-transform: uppercase; color: rgba(251,251,252,.7);">
+          <span style="padding-right: 40px;">Build week Oct 5–11 &nbsp;·&nbsp; Demo Day Oct 11, 1–4 PM &nbsp;·&nbsp; UC Berkeley &nbsp;·&nbsp; SCET × DECODE &nbsp;·&nbsp; Official #SFTechWeek event &nbsp;·&nbsp;</span>
+          <span style="padding-right: 40px;">Build week Oct 5–11 &nbsp;·&nbsp; Demo Day Oct 11, 1–4 PM &nbsp;·&nbsp; UC Berkeley &nbsp;·&nbsp; SCET × DECODE &nbsp;·&nbsp; Official #SFTechWeek event &nbsp;·&nbsp;</span>
+        </div>
+      </div>
+    </section>
+
+    <section style="max-width: 1240px; margin: 0 auto; padding: 40px 28px 0;">
+      <div class="blueprint" style="margin-top: 64px; display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));">
+        <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+        <div style="padding: 22px 24px; border-right: 1px solid var(--color-divider);">
+          <div style="font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-neutral-600);">Build week</div>
+          <div style="font-family: var(--font-heading); font-size: 24px; margin-top: 6px;">Oct 5 – 11</div>
+        </div>
+        <div style="padding: 22px 24px; border-right: 1px solid var(--color-divider);">
+          <div style="font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-neutral-600);">Demo Day</div>
+          <div style="font-family: var(--font-heading); font-size: 24px; margin-top: 6px;">Sun, Oct 11 · 1–4 PM</div>
+        </div>
+        <div style="padding: 22px 24px; border-right: 1px solid var(--color-divider);">
+          <div style="font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-neutral-600);">Venue</div>
+          <div style="font-family: var(--font-heading); font-size: 24px; margin-top: 6px;">UC Berkeley</div>
+        </div>
+        <div style="padding: 22px 24px;">
+          <div style="font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-neutral-600);">Teams</div>
+          <div style="font-family: var(--font-heading); font-size: 24px; margin-top: 6px;">1 – 4 builders</div>
+        </div>
+      </div>
+
+      <div class="blueprint" style="margin-top: 22px; background: var(--color-accent-900); color: #f2f2f3; padding: 20px 24px; display: flex; flex-wrap: wrap; gap: 24px 40px; align-items: center; justify-content: space-between;">
+        <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+        <div style="display: flex; align-items: center; gap: 12px;">
+          <span style="width: 8px; height: 8px; background: var(--color-accent-300); border-radius: 50%;"></span>
+          <span style="font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase;">Applications open · Demo Day in</span>
+        </div>
+        <div style="display: flex; gap: 28px; align-items: baseline;">
+          <div style="text-align: center;">
+            <div style="font-family: var(--font-heading); font-size: clamp(30px, 4vw, 46px); line-height: 1; font-variant-numeric: tabular-nums;">{{ cdDays }}</div>
+            <div style="font-size: 9px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--color-accent-300); margin-top: 4px;">Days</div>
+          </div>
+          <div style="text-align: center;">
+            <div style="font-family: var(--font-heading); font-size: clamp(30px, 4vw, 46px); line-height: 1; font-variant-numeric: tabular-nums;">{{ cdHours }}</div>
+            <div style="font-size: 9px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--color-accent-300); margin-top: 4px;">Hours</div>
+          </div>
+          <div style="text-align: center;">
+            <div style="font-family: var(--font-heading); font-size: clamp(30px, 4vw, 46px); line-height: 1; font-variant-numeric: tabular-nums;">{{ cdMins }}</div>
+            <div style="font-size: 9px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--color-accent-300); margin-top: 4px;">Min</div>
+          </div>
+          <div style="text-align: center;">
+            <div style="font-family: var(--font-heading); font-size: clamp(30px, 4vw, 46px); line-height: 1; font-variant-numeric: tabular-nums; color: var(--color-accent-300);">{{ cdSecs }}</div>
+            <div style="font-size: 9px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--color-accent-300); margin-top: 4px;">Sec</div>
+          </div>
+        </div>
+        <div style="font-size: 12.5px; line-height: 1.5; color: color-mix(in srgb, #f2f2f3 72%, transparent); max-width: 30ch;">Priority deadline <strong style="font-weight: 500; color: #f2f2f3;">Sep 28</strong> · final <strong style="font-weight: 500; color: #f2f2f3;">Oct 4</strong>. Reviewed on a rolling basis.</div>
+      </div>
+
+      
+    </section>
+
+    <section style="max-width: 1240px; margin: 0 auto; padding: 72px 28px 0;">
+      <div style="border-top: 1px solid var(--color-divider); padding-top: 22px;">
+        <div style="font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-neutral-600); margin-bottom: 24px;">Hosted with support from</div>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 28px; align-items: end;">
+        <div style="display: flex; flex-direction: column; gap: 10px;">
+          <img src="assets/logo-scet.webp" alt="Pantas and Ting Sutardja Center for Entrepreneurship &amp; Technology, Berkeley Engineering" style="height: 46px; width: auto; object-fit: contain; object-position: left center; align-self: flex-start; mix-blend-mode: multiply;">
+          <div style="font-size: 12px; color: var(--color-neutral-600);">Innovators-in-Residence DeCal Leads</div>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 10px;">
+          <img src="assets/logo-decode.png" alt="DECODE" style="height: 52px; width: auto; object-fit: contain; object-position: left center; align-self: flex-start; mix-blend-mode: multiply;">
+          <div style="font-size: 12px; color: var(--color-neutral-600);">Berkeley &amp; Stanford founder community</div>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 10px;">
+          <img src="assets/logo-techweek.png" alt="Tech Week by a16z" style="height: 30px; width: auto; object-fit: contain; object-position: left center; align-self: flex-start; filter: invert(1);">
+          <div style="font-size: 12px; color: var(--color-neutral-600);">Official #SFTechWeek event</div>
+        </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="thesis" style="max-width: 1240px; margin: 0 auto; padding: 112px 28px 0; scroll-margin-top: 90px;" data-reveal>
+      <div style="display: flex; align-items: center; gap: 14px; margin: 0 0 30px; font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--color-neutral-600);"><span style="color: var(--color-accent-700);">01</span><span>Thesis</span><span style="flex: 1; height: 1px; background: var(--color-divider);"></span></div>
+      <h2 style="font-family: var(--font-heading); font-size: clamp(34px, 4.6vw, 58px); line-height: 1.02; letter-spacing: -0.02em; margin: 0; max-width: 22ch;">Not another generic hackathon.</h2>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 44px 40px; margin-top: 56px;">
+        <div style="border-top: 2px solid var(--color-text); padding-top: 16px;">
+          <div style="font-family: var(--font-heading); font-size: 13px; letter-spacing: 0.1em; color: var(--color-accent-700);">01</div>
+          <h3 style="font-family: var(--font-heading); font-size: 23px; margin: 8px 0 10px;">Build for a real problem.</h3>
+          <p style="font-size: 14.5px; line-height: 1.65; color: var(--color-neutral-700); margin: 0;">Name a market and a customer, not just a demo. Sharpest insight beats largest codebase.</p>
+        </div>
+        <div style="border-top: 2px solid var(--color-text); padding-top: 16px;">
+          <div style="font-family: var(--font-heading); font-size: 13px; letter-spacing: 0.1em; color: var(--color-accent-700);">02</div>
+          <h3 style="font-family: var(--font-heading); font-size: 23px; margin: 8px 0 10px;">Think past 4:00 PM.</h3>
+          <p style="font-size: 14.5px; line-height: 1.65; color: var(--color-neutral-700); margin: 0;">Judging weighs insight and venture potential — evidence of something worth continuing.</p>
+        </div>
+        <div style="border-top: 2px solid var(--color-text); padding-top: 16px;">
+          <div style="font-family: var(--font-heading); font-size: 13px; letter-spacing: 0.1em; color: var(--color-accent-700);">03</div>
+          <h3 style="font-family: var(--font-heading); font-size: 23px; margin: 8px 0 10px;">Work next to people who build and invest.</h3>
+          <p style="font-size: 14.5px; line-height: 1.65; color: var(--color-neutral-700); margin: 0;">Founders, operators, and investors from SCET and DECODE are in the room all week.</p>
+        </div>
+        <div style="border-top: 2px solid var(--color-text); padding-top: 16px;">
+          <div style="font-family: var(--font-heading); font-size: 13px; letter-spacing: 0.1em; color: var(--color-accent-700);">04</div>
+          <h3 style="font-family: var(--font-heading); font-size: 23px; margin: 8px 0 10px;">Demo like it matters.</h3>
+          <p style="font-size: 14.5px; line-height: 1.65; color: var(--color-neutral-700); margin: 0;">Three minutes, live, on October 11. A startup demo, not a class presentation.</p>
+        </div>
+      </div>
+    </section>
+
+    <section style="max-width: 1240px; margin: 0 auto; padding: 112px 28px 0;" data-reveal>
+      <div style="display: flex; align-items: center; gap: 14px; margin: 0 0 30px; font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--color-neutral-600);"><span style="color: var(--color-accent-700);">02</span><span>Process</span><span style="flex: 1; height: 1px; background: var(--color-divider);"></span></div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 28px; align-items: end;">
+        <h2 style="font-family: var(--font-heading); font-size: clamp(34px, 4.6vw, 58px); line-height: 1.02; letter-spacing: -0.02em; margin: 0;">How it works.</h2>
+        <p style="font-size: 15px; line-height: 1.65; color: var(--color-neutral-700); margin: 0; max-width: 48ch;">Four steps from a pain point to a live demo.</p>
+      </div>
+      <div style="margin-top: 52px; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1px;">
+        <div class="lift" style="background: var(--color-bg); box-shadow: 0 0 0 1px var(--color-divider); padding: 32px 28px 34px;">
+          <div style="font-family: var(--font-heading); font-size: clamp(40px, 4.4vw, 60px); line-height: 1; color: var(--color-accent-600);">01</div>
+          <h3 style="font-family: var(--font-heading); font-size: 22px; margin: 18px 0 10px;">Choose a track</h3>
+          <p style="font-size: 14px; line-height: 1.65; color: var(--color-neutral-700); margin: 0;">Start from a real problem in one of five areas.</p>
+        </div>
+        <div class="lift" style="background: var(--color-bg); box-shadow: 0 0 0 1px var(--color-divider); padding: 32px 28px 34px;">
+          <div style="font-family: var(--font-heading); font-size: clamp(40px, 4.4vw, 60px); line-height: 1; color: var(--color-accent-600);">02</div>
+          <h3 style="font-family: var(--font-heading); font-size: 22px; margin: 18px 0 10px;">Build your team</h3>
+          <p style="font-size: 14px; line-height: 1.65; color: var(--color-neutral-700); margin: 0;">Form a team across engineering, design, research, and business.</p>
+        </div>
+        <div class="lift" style="background: var(--color-bg); box-shadow: 0 0 0 1px var(--color-divider); padding: 32px 28px 34px;">
+          <div style="font-family: var(--font-heading); font-size: clamp(40px, 4.4vw, 60px); line-height: 1; color: var(--color-accent-600);">03</div>
+          <h3 style="font-family: var(--font-heading); font-size: 22px; margin: 18px 0 10px;">Build for a week</h3>
+          <p style="font-size: 14px; line-height: 1.65; color: var(--color-neutral-700); margin: 0;">Turn the idea into a working prototype.</p>
+        </div>
+        <div class="lift" style="background: var(--color-bg); box-shadow: 0 0 0 1px var(--color-divider); padding: 32px 28px 34px;">
+          <div style="font-family: var(--font-heading); font-size: clamp(40px, 4.4vw, 60px); line-height: 1; color: var(--color-accent-600);">04</div>
+          <h3 style="font-family: var(--font-heading); font-size: 22px; margin: 18px 0 10px;">Demo live</h3>
+          <p style="font-size: 14px; line-height: 1.65; color: var(--color-neutral-700); margin: 0;">Present to founders, investors, and the Tech Week community.</p>
+        </div>
+      </div>
+    </section>
+
+    <section style="margin-top: 112px; background: var(--color-accent-900); color: #f2f2f3;">
+      <div style="max-width: 1240px; margin: 0 auto; padding: 96px 28px; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 56px;">
+        <p style="font-family: var(--font-heading); font-weight: 600; font-size: clamp(30px, 3.8vw, 46px); line-height: 1.08; letter-spacing: -0.02em; margin: 0; text-wrap: pretty;">Great companies often begin as a small experiment run by people who couldn't stop thinking about a problem.</p>
+        <div style="display: flex; flex-direction: column; gap: 18px; max-width: 52ch; align-self: end;">
+          <p style="font-size: 15.5px; line-height: 1.7; margin: 0; color: color-mix(in srgb, #f2f2f3 82%, transparent);">A full week to build — long enough to talk to real users and ship something that works — and three hours on October 11 to prove it.</p>
+          <p style="font-size: 15.5px; line-height: 1.7; margin: 0; color: color-mix(in srgb, #f2f2f3 82%, transparent);">We are not looking for finished companies. We are looking for evidence of something worth continuing.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="tracks" style="max-width: 1240px; margin: 0 auto; padding: 112px 28px 0; scroll-margin-top: 90px;" data-reveal>
+      <div style="display: flex; align-items: center; gap: 14px; margin: 0 0 30px; font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--color-neutral-600);"><span style="color: var(--color-accent-700);">03</span><span>Tracks</span><span style="flex: 1; height: 1px; background: var(--color-divider);"></span></div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 28px; align-items: end;">
+        <h2 style="font-family: var(--font-heading); font-size: clamp(34px, 4.6vw, 58px); line-height: 1.02; letter-spacing: -0.02em; margin: 0;">Five tracks.</h2>
+        <p style="font-size: 15px; line-height: 1.65; color: var(--color-neutral-700); margin: 0; max-width: 46ch;">Tracks mark the space you're building in, not a required format. Every project competes for the general awards.</p>
+      </div>
+
+      <div style="margin-top: 52px; border-top: 1px solid var(--color-divider);">
+        <div class="row-fx" style="display: flex; flex-wrap: wrap; gap: 24px 32px; padding: 34px 20px; margin: 0 -20px; border-bottom: 1px solid var(--color-divider); cursor: default;">
+          <div style="flex: 1 1 220px; min-width: 0;">
+            <div class="row-idx" style="font-family: var(--font-heading); font-size: 12px; letter-spacing: 0.12em; color: var(--color-accent-700); display: flex; align-items: center; gap: 10px;"><span>TRACK 01</span><span class="row-arrow">&#8594;</span></div>
+            <h3 style="font-family: var(--font-heading); font-size: clamp(24px, 2.4vw, 32px); margin: 8px 0 0; letter-spacing: -0.015em;">AI-Native Enterprise</h3>
+          </div>
+          <div style="flex: 2 1 300px; min-width: 0;">
+            <p style="font-size: 15px; line-height: 1.6; margin: 0 0 10px;">Reinvent a real workflow with AI.</p>
+            <p class="row-sub" style="font-size: 13.5px; line-height: 1.6; color: var(--color-neutral-600); margin: 0;">Agents · vertical AI · developer tools · legal · finance · operations · cybersecurity · infrastructure</p>
+          </div>
+          <div style="font-size: 13px; flex: 1 1 190px; min-width: 0;">
+            <div class="row-cap" style="font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-neutral-600);">Track award</div>
+            <div style="font-family: var(--font-heading); font-size: 18px; margin-top: 6px;">Best Enterprise Reinvention</div>
+          </div>
+        </div>
+        <div class="row-fx" style="display: flex; flex-wrap: wrap; gap: 24px 32px; padding: 34px 20px; margin: 0 -20px; border-bottom: 1px solid var(--color-divider); cursor: default;">
+          <div style="flex: 1 1 220px; min-width: 0;">
+            <div class="row-idx" style="font-family: var(--font-heading); font-size: 12px; letter-spacing: 0.12em; color: var(--color-accent-700); display: flex; align-items: center; gap: 10px;"><span>TRACK 02</span><span class="row-arrow">&#8594;</span></div>
+            <h3 style="font-family: var(--font-heading); font-size: clamp(24px, 2.4vw, 32px); margin: 8px 0 0; letter-spacing: -0.015em;">The Physical World</h3>
+          </div>
+          <div style="flex: 2 1 300px; min-width: 0;">
+            <p style="font-size: 15px; line-height: 1.6; margin: 0 0 10px;">Build where software meets atoms.</p>
+            <p class="row-sub" style="font-size: 13.5px; line-height: 1.6; color: var(--color-neutral-600); margin: 0;">Robotics · manufacturing · logistics · mobility · autonomy · computer vision · energy · drones · IoT</p>
+          </div>
+          <div style="font-size: 13px; flex: 1 1 190px; min-width: 0;">
+            <div class="row-cap" style="font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-neutral-600);">Track award</div>
+            <div style="font-family: var(--font-heading); font-size: 18px; margin-top: 6px;">Best Bits-to-Atoms Startup</div>
+          </div>
+        </div>
+        <div class="row-fx" style="display: flex; flex-wrap: wrap; gap: 24px 32px; padding: 34px 20px; margin: 0 -20px; border-bottom: 1px solid var(--color-divider); cursor: default;">
+          <div style="flex: 1 1 220px; min-width: 0;">
+            <div class="row-idx" style="font-family: var(--font-heading); font-size: 12px; letter-spacing: 0.12em; color: var(--color-accent-700); display: flex; align-items: center; gap: 10px;"><span>TRACK 03</span><span class="row-arrow">&#8594;</span></div>
+            <h3 style="font-family: var(--font-heading); font-size: clamp(24px, 2.4vw, 32px); margin: 8px 0 0; letter-spacing: -0.015em;">Health &amp; Human Performance</h3>
+          </div>
+          <div style="flex: 2 1 300px; min-width: 0;">
+            <p style="font-size: 15px; line-height: 1.6; margin: 0 0 10px;">Build products that improve how people live, work, learn, or recover.</p>
+            <p class="row-sub" style="font-size: 13.5px; line-height: 1.6; color: var(--color-neutral-600); margin: 0;">Health · biotech · accessibility · education · diagnostics · productivity · aging · HCI</p>
+          </div>
+          <div style="font-size: 13px; flex: 1 1 190px; min-width: 0;">
+            <div class="row-cap" style="font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-neutral-600);">Track award</div>
+            <div style="font-family: var(--font-heading); font-size: 18px; margin-top: 6px;">Best Human Impact</div>
+          </div>
+        </div>
+        <div class="row-fx" style="display: flex; flex-wrap: wrap; gap: 24px 32px; padding: 34px 20px; margin: 0 -20px; border-bottom: 1px solid var(--color-divider); cursor: default;">
+          <div style="flex: 1 1 220px; min-width: 0;">
+            <div class="row-idx" style="font-family: var(--font-heading); font-size: 12px; letter-spacing: 0.12em; color: var(--color-accent-700); display: flex; align-items: center; gap: 10px;"><span>TRACK 04</span><span class="row-arrow">&#8594;</span></div>
+            <h3 style="font-family: var(--font-heading); font-size: clamp(24px, 2.4vw, 32px); margin: 8px 0 0; letter-spacing: -0.015em;">Frontier &amp; Deep Tech</h3>
+          </div>
+          <div style="flex: 2 1 300px; min-width: 0;">
+            <p style="font-size: 15px; line-height: 1.6; margin: 0 0 10px;">Build for technologies and markets that are still taking shape.</p>
+            <p class="row-sub" style="font-size: 13.5px; line-height: 1.6; color: var(--color-neutral-600); margin: 0;">Semiconductors · space · quantum · advanced computing · energy · climate · materials · scientific tools</p>
+          </div>
+          <div style="font-size: 13px; flex: 1 1 190px; min-width: 0;">
+            <div class="row-cap" style="font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-neutral-600);">Track award</div>
+            <div style="font-family: var(--font-heading); font-size: 18px; margin-top: 6px;">Best Frontier Technology</div>
+          </div>
+        </div>
+        <div class="row-fx" style="display: flex; flex-wrap: wrap; gap: 24px 32px; padding: 34px 20px; margin: 0 -20px; border-bottom: 1px solid var(--color-divider); cursor: default;">
+          <div style="flex: 1 1 220px; min-width: 0;">
+            <div class="row-idx" style="font-family: var(--font-heading); font-size: 12px; letter-spacing: 0.12em; color: var(--color-accent-700); display: flex; align-items: center; gap: 10px;"><span>TRACK 05</span><span class="row-arrow">&#8594;</span></div>
+            <h3 style="font-family: var(--font-heading); font-size: clamp(24px, 2.4vw, 32px); margin: 8px 0 0; letter-spacing: -0.015em;">Consumer &amp; New Experiences</h3>
+          </div>
+          <div style="flex: 2 1 300px; min-width: 0;">
+            <p style="font-size: 15px; line-height: 1.6; margin: 0 0 10px;">Build products people genuinely want to use.</p>
+            <p class="row-sub" style="font-size: 13.5px; line-height: 1.6; color: var(--color-neutral-600); margin: 0;">Consumer AI · social · creator tools · marketplaces · commerce · travel · new interfaces · entertainment</p>
+          </div>
+          <div style="font-size: 13px; flex: 1 1 190px; min-width: 0;">
+            <div class="row-cap" style="font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-neutral-600);">Track award</div>
+            <div style="font-family: var(--font-heading); font-size: 18px; margin-top: 6px;">Best Consumer Experience</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section style="max-width: 1240px; margin: 0 auto; padding: 72px 28px 0;" data-reveal>
+      <div style="display: flex; flex-wrap: wrap; gap: 20px 48px; align-items: baseline; border-left: 2px solid var(--color-accent); padding-left: 28px;">
+        <p style="font-family: var(--font-heading); font-weight: 600; font-size: clamp(26px, 3.2vw, 40px); line-height: 1.1; letter-spacing: -0.02em; margin: 0; max-width: 30ch;">The goal isn't to build something cool for a week.</p>
+        <p style="font-family: var(--font-heading); font-weight: 600; font-size: clamp(26px, 3.2vw, 40px); line-height: 1.1; letter-spacing: -0.02em; margin: 0; max-width: 30ch; color: var(--color-accent-700);">Start with a real problem. Build something worth pursuing.</p>
+      </div>
+    </section>
+
+    <section id="format" style="max-width: 1240px; margin: 0 auto; padding: 112px 28px 0; scroll-margin-top: 90px;" data-reveal>
+      <div style="display: flex; align-items: center; gap: 14px; margin: 0 0 30px; font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--color-neutral-600);"><span style="color: var(--color-accent-700);">04</span><span>Format</span><span style="flex: 1; height: 1px; background: var(--color-divider);"></span></div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 56px;">
+        <div>
+          <h2 style="font-family: var(--font-heading); font-size: clamp(34px, 4.6vw, 58px); line-height: 1.02; letter-spacing: -0.02em; margin: 0;">A week to build.<br>Three hours to prove it.</h2>
+          <p style="font-size: 15px; line-height: 1.65; color: var(--color-neutral-700); margin: 20px 0 0; max-width: 42ch;">Teams form at kickoff on October 5 and build through the week. October 11 is judging and Demo Day.</p>
+          <div style="margin-top: 28px; display: flex; flex-direction: column; gap: 10px; font-size: 13.5px; color: var(--color-neutral-700);">
+            <div style="display: flex; gap: 10px;"><span style="color: var(--color-accent);">→</span> Coaching runs all week — daily office hours in person and online.</div>
+            <div style="display: flex; gap: 10px;"><span style="color: var(--color-accent);">→</span> Build remotely or on campus during the week; Demo Day is in person.</div>
+            <div style="display: flex; gap: 10px;"><span style="color: var(--color-accent);">→</span> Existing code, open-source, and AI tools are fine; the product must be built during build week.</div>
+            <div style="display: flex; gap: 10px;"><span style="color: var(--color-accent);">→</span> Bring a laptop and a charger. You keep your IP.</div>
+          </div>
+          <div class="blueprint" style="position: relative; margin-top: 34px; padding: 24px 26px; border: 1px solid var(--color-divider);">
+            <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+            <div style="font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-accent-700);">Coaching · all week</div>
+            <div style="font-family: var(--font-heading); font-size: 26px; line-height: 1.1; margin-top: 8px;">A mini accelerator, compressed into six days.</div>
+            <p style="font-size: 14.5px; line-height: 1.65; color: var(--color-neutral-700); margin: 12px 0 0; max-width: 46ch;">Founders, operators, SCET Innovators-in-Residence, and investors hold office hours every day of build week — on campus and online.</p>
+            <div style="margin-top: 18px; display: flex; flex-direction: column; gap: 9px; font-size: 13.5px; color: var(--color-neutral-700);">
+              <div style="display: flex; gap: 10px;"><span style="color: var(--color-accent);">·</span> Problem framing and customer discovery early in the week</div>
+              <div style="display: flex; gap: 10px;"><span style="color: var(--color-accent);">·</span> Technical and product review mid-week</div>
+              <div style="display: flex; gap: 10px;"><span style="color: var(--color-accent);">·</span> Pitch and demo rehearsal before submissions close</div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div style="font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-neutral-600);">Build week · Oct 5 – 10</div>
+          <div style="margin-top: 12px; display: grid; grid-template-columns: 108px minmax(0, 1fr); border-top: 1px solid var(--color-divider);">
+            <div style="padding: 15px 0; border-bottom: 1px solid var(--color-divider); font-family: var(--font-heading); font-size: 16px; color: var(--color-accent-700);">Sun, Oct 5</div>
+            <div style="padding: 15px 0; border-bottom: 1px solid var(--color-divider); font-size: 15px;">Kickoff — track briefings and team formation. Building starts the same day.</div>
+            <div style="padding: 15px 0; border-bottom: 1px solid var(--color-divider); font-family: var(--font-heading); font-size: 16px; color: var(--color-accent-700);">Oct 6 – 9</div>
+            <div style="padding: 15px 0; border-bottom: 1px solid var(--color-divider); font-size: 15px;">Build — daily coaching and office hours with mentors and investors, on campus and online</div>
+            <div style="padding: 15px 0; border-bottom: 1px solid var(--color-divider); font-family: var(--font-heading); font-size: 16px; color: var(--color-accent-700);">Sat, Oct 10</div>
+            <div style="padding: 15px 0; border-bottom: 1px solid var(--color-divider); font-size: 15px;">Submissions close, 11:59 PM — repo, demo video, and one-paragraph thesis</div>
+          </div>
+          
+
+          <div style="margin-top: 34px; font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-neutral-600);">Demo Day · Sun, Oct 11 · UC Berkeley</div>
+          <div style="margin-top: 12px; display: grid; grid-template-columns: 108px minmax(0, 1fr); border-top: 1px solid var(--color-divider);">
+            <div style="padding: 15px 0; border-bottom: 1px solid var(--color-divider); font-family: var(--font-heading); font-size: 16px; color: var(--color-accent-700);">1:00</div>
+            <div style="padding: 15px 0; border-bottom: 1px solid var(--color-divider); font-size: 15px;">Check-in and setup</div>
+            <div style="padding: 15px 0; border-bottom: 1px solid var(--color-divider); font-family: var(--font-heading); font-size: 16px; color: var(--color-accent-700);">1:20</div>
+            <div style="padding: 15px 0; border-bottom: 1px solid var(--color-divider); font-size: 15px;">Opening remarks — SCET Innovators-in-Residence and DECODE</div>
+            <div style="padding: 15px 0; border-bottom: 1px solid var(--color-divider); font-family: var(--font-heading); font-size: 16px; color: var(--color-accent-700);">1:30</div>
+            <div style="padding: 15px 0; border-bottom: 1px solid var(--color-divider); font-size: 15px;">Preliminary judging — table rounds with judges and mentors</div>
+            <div style="padding: 15px 0; border-bottom: 1px solid var(--color-divider); font-family: var(--font-heading); font-size: 16px; color: var(--color-accent-700);">2:30</div>
+            <div style="padding: 15px 0; border-bottom: 1px solid var(--color-divider); font-size: 15px;">Finalists announced</div>
+            <div style="padding: 15px 0; border-bottom: 1px solid var(--color-divider); font-family: var(--font-heading); font-size: 16px; color: var(--color-accent-700);">2:45</div>
+            <div style="padding: 15px 0; border-bottom: 1px solid var(--color-divider); font-size: 15px;">Demo Day — three minutes per finalist, live on stage</div>
+            <div style="padding: 15px 0; border-bottom: 1px solid var(--color-divider); font-family: var(--font-heading); font-size: 16px; color: var(--color-accent-700);">3:45</div>
+            <div style="padding: 15px 0; border-bottom: 1px solid var(--color-divider); font-size: 15px;">Awards</div>
+            <div style="padding: 15px 0; font-family: var(--font-heading); font-size: 16px; color: var(--color-accent-700);">4:00</div>
+            <div style="padding: 15px 0; font-size: 15px;">Close — community hour with mentors and investors</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="prizes" style="max-width: 1240px; margin: 0 auto; padding: 112px 28px 0; scroll-margin-top: 90px;" data-reveal>
+      <div style="display: flex; align-items: center; gap: 14px; margin: 0 0 30px; font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--color-neutral-600);"><span style="color: var(--color-accent-700);">05</span><span>What wins</span><span style="flex: 1; height: 1px; background: var(--color-divider);"></span></div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 28px; align-items: end;">
+        <h2 style="font-family: var(--font-heading); font-size: clamp(34px, 4.6vw, 58px); line-height: 1.02; letter-spacing: -0.02em; margin: 0;">What we're looking for.</h2>
+        <p style="font-size: 15px; line-height: 1.65; color: var(--color-neutral-700); margin: 0; max-width: 46ch;">Not a finished company. Evidence of something worth continuing.</p>
+      </div>
+
+      <div style="margin-top: 52px; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1px;">
+        <div class="lift" style="background: var(--color-bg); box-shadow: 0 0 0 1px var(--color-divider); padding: 30px 26px;">
+          <div style="font-family: var(--font-heading); font-size: 12px; letter-spacing: 0.12em; color: var(--color-accent-700);">01</div>
+          <div style="font-family: var(--font-heading); font-size: 23px; line-height: 1.12; margin: 12px 0 8px;">A problem someone actually has</div>
+          <p style="font-size: 13.5px; line-height: 1.6; color: var(--color-neutral-700); margin: 0;">Named customer, named market. Not a use case invented to fit the tech.</p>
+        </div>
+        <div class="lift" style="background: var(--color-bg); box-shadow: 0 0 0 1px var(--color-divider); padding: 30px 26px;">
+          <div style="font-family: var(--font-heading); font-size: 12px; letter-spacing: 0.12em; color: var(--color-accent-700);">02</div>
+          <div style="font-family: var(--font-heading); font-size: 23px; line-height: 1.12; margin: 12px 0 8px;">An insight the room missed</div>
+          <p style="font-size: 13.5px; line-height: 1.6; color: var(--color-neutral-700); margin: 0;">Something you understood about the problem that others did not.</p>
+        </div>
+        <div class="lift" style="background: var(--color-bg); box-shadow: 0 0 0 1px var(--color-divider); padding: 30px 26px;">
+          <div style="font-family: var(--font-heading); font-size: 12px; letter-spacing: 0.12em; color: var(--color-accent-700);">03</div>
+          <div style="font-family: var(--font-heading); font-size: 23px; line-height: 1.12; margin: 12px 0 8px;">Software that runs</div>
+          <p style="font-size: 13.5px; line-height: 1.6; color: var(--color-neutral-700); margin: 0;">A working prototype beats a deck. Rough edges are fine; vapor is not.</p>
+        </div>
+        <div class="lift" style="background: var(--color-bg); box-shadow: 0 0 0 1px var(--color-divider); padding: 30px 26px;">
+          <div style="font-family: var(--font-heading); font-size: 12px; letter-spacing: 0.12em; color: var(--color-accent-700);">04</div>
+          <div style="font-family: var(--font-heading); font-size: 23px; line-height: 1.12; margin: 12px 0 8px;">A reason to keep going</div>
+          <p style="font-size: 13.5px; line-height: 1.6; color: var(--color-neutral-700); margin: 0;">A first customer, a next step, a team that wants to build it past Sunday.</p>
+        </div>
+      </div>
+
+      <div class="blueprint" style="margin-top: 28px; padding: 40px; display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 32px; align-items: center; background: var(--color-accent-900); color: #f2f2f3;">
+        <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+        <div>
+          <div style="font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--color-accent-300);">Recognition</div>
+          <div style="font-family: var(--font-heading); font-size: clamp(32px, 4.4vw, 56px); line-height: 0.98; letter-spacing: -0.025em; margin-top: 10px;">Best Overall</div>
+        </div>
+        <p style="font-size: 14.5px; line-height: 1.7; color: color-mix(in srgb, #f2f2f3 78%, transparent); margin: 0; max-width: 46ch;">One top award for the strongest project overall, plus one award per track. Judges may name a small number of standouts beyond that.</p>
+      </div>
+    </section>
+
+    <section id="judging" style="max-width: 1240px; margin: 0 auto; padding: 112px 28px 0; scroll-margin-top: 90px;" data-reveal>
+      <div style="display: flex; align-items: center; gap: 14px; margin: 0 0 30px; font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--color-neutral-600);"><span style="color: var(--color-accent-700);">06</span><span>Judging</span><span style="flex: 1; height: 1px; background: var(--color-divider);"></span></div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 56px;">
+        <div>
+          <h2 style="font-family: var(--font-heading); font-size: clamp(34px, 4.6vw, 58px); line-height: 1.02; letter-spacing: -0.02em; margin: 0;">How judging works.</h2>
+          <p style="font-size: 15px; line-height: 1.65; color: var(--color-neutral-700); margin: 20px 0 0; max-width: 44ch;">Five weighted dimensions, scored by founders, operators, and investors. No revenue or business plan expected.</p>
+          <div style="margin-top: 28px; font-size: 13.5px; color: var(--color-neutral-700);">Judges announced soon.</div>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 0; border-top: 1px solid var(--color-divider);">
+          <div style="padding: 20px 0; border-bottom: 1px solid var(--color-divider);">
+            <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 16px;">
+              <div style="font-family: var(--font-heading); font-size: 21px;">Problem / Insight</div>
+              <div style="font-family: var(--font-heading); font-size: 21px; color: var(--color-accent-700);">20%</div>
+            </div>
+            <p style="font-size: 13.5px; line-height: 1.6; color: var(--color-neutral-600); margin: 6px 0 0;">Is this a meaningful problem with a non-obvious insight?</p>
+            <div style="margin-top: 10px; height: 3px; background: var(--color-neutral-200);"><div style="width: 20%; height: 3px; background: var(--color-accent);" class="bar-fill"></div></div>
+          </div>
+          <div style="padding: 20px 0; border-bottom: 1px solid var(--color-divider);">
+            <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 16px;">
+              <div style="font-family: var(--font-heading); font-size: 21px;">Product &amp; Demo</div>
+              <div style="font-family: var(--font-heading); font-size: 21px; color: var(--color-accent-700);">25%</div>
+            </div>
+            <p style="font-size: 13.5px; line-height: 1.6; color: var(--color-neutral-600); margin: 6px 0 0;">Did the team build something compelling and coherent?</p>
+            <div style="margin-top: 10px; height: 3px; background: var(--color-neutral-200);"><div style="width: 25%; height: 3px; background: var(--color-accent);" class="bar-fill"></div></div>
+          </div>
+          <div style="padding: 20px 0; border-bottom: 1px solid var(--color-divider);">
+            <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 16px;">
+              <div style="font-family: var(--font-heading); font-size: 21px;">Technical Execution</div>
+              <div style="font-family: var(--font-heading); font-size: 21px; color: var(--color-accent-700);">20%</div>
+            </div>
+            <p style="font-size: 13.5px; line-height: 1.6; color: var(--color-neutral-600); margin: 6px 0 0;">How strong is the implementation relative to the time available?</p>
+            <div style="margin-top: 10px; height: 3px; background: var(--color-neutral-200);"><div style="width: 20%; height: 3px; background: var(--color-accent);" class="bar-fill"></div></div>
+          </div>
+          <div style="padding: 20px 0; border-bottom: 1px solid var(--color-divider);">
+            <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 16px;">
+              <div style="font-family: var(--font-heading); font-size: 21px;">Market / Venture Potential</div>
+              <div style="font-family: var(--font-heading); font-size: 21px; color: var(--color-accent-700);">20%</div>
+            </div>
+            <p style="font-size: 13.5px; line-height: 1.6; color: var(--color-neutral-600); margin: 6px 0 0;">Could this become an important product or company?</p>
+            <div style="margin-top: 10px; height: 3px; background: var(--color-neutral-200);"><div style="width: 20%; height: 3px; background: var(--color-accent);" class="bar-fill"></div></div>
+          </div>
+          <div style="padding: 20px 0; border-bottom: 1px solid var(--color-divider);">
+            <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 16px;">
+              <div style="font-family: var(--font-heading); font-size: 21px;">Team &amp; Pitch</div>
+              <div style="font-family: var(--font-heading); font-size: 21px; color: var(--color-accent-700);">15%</div>
+            </div>
+            <p style="font-size: 13.5px; line-height: 1.6; color: var(--color-neutral-600); margin: 6px 0 0;">Can the team say why this matters and why they are suited to build it?</p>
+            <div style="margin-top: 10px; height: 3px; background: var(--color-neutral-200);"><div style="width: 15%; height: 3px; background: var(--color-accent);" class="bar-fill"></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section style="max-width: 1240px; margin: 0 auto; padding: 112px 28px 0;">
+      <div class="blueprint" style="padding: 56px 44px; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 40px; align-items: center;">
+        <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+        <div>
+          <h2 style="font-family: var(--font-heading); font-size: clamp(32px, 4vw, 50px); line-height: 1.03; letter-spacing: -0.02em; margin: 0;">Applications are selective.</h2>
+          <p style="font-size: 15px; line-height: 1.65; color: var(--color-neutral-700); margin: 16px 0 0; max-width: 48ch;">One short form, reviewed on a rolling basis. Priority deadline Sep 28.</p>
+        </div>
+        <div style="display: flex; gap: 12px; flex-wrap: wrap; justify-content: flex-end;">
+          <a href="https://partiful.com/e/RooXgfy6sLQdTwi53NXi" target="_blank" rel="noopener" class="btn btn-primary" style="text-decoration: none; padding: 14px 30px; font-size: 15px;">Apply Now</a>
+          <a href="https://forms.gle/nctwEdz5ujgd4yHe9" target="_blank" rel="noopener" class="btn btn-secondary" style="text-decoration: none; padding: 14px 30px; font-size: 15px;">Partner or Judge</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq" style="max-width: 1240px; margin: 0 auto; padding: 112px 28px 0; scroll-margin-top: 90px;" data-reveal>
+      <div style="display: flex; align-items: center; gap: 14px; margin: 0 0 30px; font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--color-neutral-600);"><span style="color: var(--color-accent-700);">07</span><span>Questions</span><span style="flex: 1; height: 1px; background: var(--color-divider);"></span></div>
+      <h2 style="font-family: var(--font-heading); font-size: clamp(34px, 4.6vw, 58px); line-height: 1.02; letter-spacing: -0.02em; margin: 0;">Questions.</h2>
+      <div style="margin-top: 44px; max-width: 900px; border-top: 1px solid var(--color-divider);">
+        <details style="border-bottom: 1px solid var(--color-divider);">
+          <summary style="cursor: pointer; padding: 22px 0; display: flex; justify-content: space-between; gap: 20px; font-family: var(--font-heading); font-size: 21px;">Who can apply?<span style="color: var(--color-accent);">+</span></summary>
+          <p style="font-size: 14.5px; line-height: 1.7; color: var(--color-neutral-700); margin: 0 0 22px; max-width: 68ch;">Undergrads, grad students, and recent graduates from any school — technical or not.</p>
+        </details>
+        <details style="border-bottom: 1px solid var(--color-divider);">
+          <summary style="cursor: pointer; padding: 22px 0; display: flex; justify-content: space-between; gap: 20px; font-family: var(--font-heading); font-size: 21px;">Do I need a team or an idea beforehand?<span style="color: var(--color-accent);">+</span></summary>
+          <p style="font-size: 14.5px; line-height: 1.7; color: var(--color-neutral-700); margin: 0 0 22px; max-width: 68ch;">No. Apply solo or with a team — teams form at the October 5 kickoff.</p>
+        </details>
+        <details style="border-bottom: 1px solid var(--color-divider);">
+          <summary style="cursor: pointer; padding: 22px 0; display: flex; justify-content: space-between; gap: 20px; font-family: var(--font-heading); font-size: 21px;">Can I participate if I'm not a strong programmer?<span style="color: var(--color-accent);">+</span></summary>
+          <p style="font-size: 14.5px; line-height: 1.7; color: var(--color-neutral-700); margin: 0 0 22px; max-width: 68ch;">Yes. The strongest teams mix technical, design, and market thinking.</p>
+        </details>
+        <details style="border-bottom: 1px solid var(--color-divider);">
+          <summary style="cursor: pointer; padding: 22px 0; display: flex; justify-content: space-between; gap: 20px; font-family: var(--font-heading); font-size: 21px;">Do teams get any support during the week?<span style="color: var(--color-accent);">+</span></summary>
+          <p style="font-size: 14.5px; line-height: 1.7; color: var(--color-neutral-700); margin: 0 0 22px; max-width: 68ch;">Yes. Build week runs like a short accelerator: daily office hours on campus and online, covering problem framing, technical review, and pitch practice.</p>
+        </details>
+        <details style="border-bottom: 1px solid var(--color-divider);">
+          <summary style="cursor: pointer; padding: 22px 0; display: flex; justify-content: space-between; gap: 20px; font-family: var(--font-heading); font-size: 21px;">Do I have to fit a track?<span style="color: var(--color-accent);">+</span></summary>
+          <p style="font-size: 14.5px; line-height: 1.7; color: var(--color-neutral-700); margin: 0 0 22px; max-width: 68ch;">No. Tracks carry their own prizes, but every project competes for the general awards.</p>
+        </details>
+        <details style="border-bottom: 1px solid var(--color-divider);">
+          <summary style="cursor: pointer; padding: 22px 0; display: flex; justify-content: space-between; gap: 20px; font-family: var(--font-heading); font-size: 21px;">Can I use existing code, and can I keep working after?<span style="color: var(--color-accent);">+</span></summary>
+          <p style="font-size: 14.5px; line-height: 1.7; color: var(--color-neutral-700); margin: 0 0 22px; max-width: 68ch;">Existing code, open-source, and AI tools are fine — the demo must be built Oct 5–10. You keep your IP.</p>
+        </details>
+        <details style="border-bottom: 1px solid var(--color-divider);">
+          <summary style="cursor: pointer; padding: 22px 0; display: flex; justify-content: space-between; gap: 20px; font-family: var(--font-heading); font-size: 21px;">How are projects judged?<span style="color: var(--color-accent);">+</span></summary>
+          <p style="font-size: 14.5px; line-height: 1.7; color: var(--color-neutral-700); margin: 0 0 22px; max-width: 68ch;">Five weighted dimensions — the full rubric is above.</p>
+        </details>
+        <details style="border-bottom: 1px solid var(--color-divider);">
+          <summary style="cursor: pointer; padding: 22px 0; display: flex; justify-content: space-between; gap: 20px; font-family: var(--font-heading); font-size: 21px;">Will the event be photographed?<span style="color: var(--color-accent);">+</span></summary>
+          <p style="font-size: 14.5px; line-height: 1.7; color: var(--color-neutral-700); margin: 0 0 22px; max-width: 68ch;">Yes. Photos and video use are covered in the participation terms; ask an organizer to be excluded from published media.</p>
+        </details>
+        <details style="border-bottom: 1px solid var(--color-divider);">
+          <summary style="cursor: pointer; padding: 22px 0; display: flex; justify-content: space-between; gap: 20px; font-family: var(--font-heading); font-size: 21px;">When do decisions go out?<span style="color: var(--color-accent);">+</span></summary>
+          <p style="font-size: 14.5px; line-height: 1.7; color: var(--color-neutral-700); margin: 0 0 22px; max-width: 68ch;">Decisions are sent by email on a rolling basis after the priority deadline. There is no status portal.</p>
+        </details>
+      </div>
+    </section>
+
+  </main>
+  </sc-if>
+
+  <sc-if value="{{ isApply }}" hint-placeholder-val="{{ false }}">
+  <main style="max-width: 1240px; margin: 0 auto; padding: 84px 28px 0;">
+    <div style="font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--color-accent-700);">Application · Fall 2026</div>
+    <h1 style="font-family: var(--font-heading); font-weight: 600; font-size: clamp(40px, 6.4vw, 82px); line-height: 0.96; letter-spacing: -0.025em; margin: 22px 0 0; max-width: 20ch;">Apply to the Innovation Intelligence Hackathon.</h1>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 48px; margin-top: 40px;">
+      <p style="font-size: 17px; line-height: 1.65; color: var(--color-neutral-700); margin: 0; max-width: 50ch;">Reviewed on a rolling basis. We look for builders, designers, researchers, and entrepreneurial thinkers.</p>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 22px; align-self: center;">
+        <div>
+          <div style="font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-neutral-600);">Priority deadline</div>
+          <div style="font-family: var(--font-heading); font-size: 22px; margin-top: 4px;">Sep 28</div>
+        </div>
+        <div>
+          <div style="font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-neutral-600);">Final deadline</div>
+          <div style="font-family: var(--font-heading); font-size: 22px; margin-top: 4px;">Oct 4</div>
+        </div>
+        <div>
+          <div style="font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-neutral-600);">Time to complete</div>
+          <div style="font-family: var(--font-heading); font-size: 22px; margin-top: 4px;">~7 min</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="display: flex; flex-wrap: wrap; gap: 48px; margin-top: 72px; align-items: flex-start;">
+      <aside style="flex: 1 1 260px; min-width: 0; display: flex; flex-direction: column; gap: 32px;">
+        <div>
+          <h2 style="font-family: var(--font-heading); font-size: 22px; margin: 0 0 12px;">Eligibility</h2>
+          <div style="display: flex; flex-direction: column; gap: 10px; font-size: 14px; line-height: 1.55; color: var(--color-neutral-700);">
+            <div style="display: flex; gap: 10px;"><span style="color: var(--color-accent);">·</span> Current undergraduate or graduate student, or recent graduate</div>
+            <div style="display: flex; gap: 10px;"><span style="color: var(--color-accent);">·</span> Free to build Oct 5–10 and attend Demo Day in person, Sun Oct 11, 1–4 PM</div>
+            <div style="display: flex; gap: 10px;"><span style="color: var(--color-accent);">·</span> Agreement with the <a href="#" onClick="{{ goTerms }}">participation terms</a></div>
+          </div>
+        </div>
+        <div>
+          <h2 style="font-family: var(--font-heading); font-size: 22px; margin: 0 0 12px;">What we ask for</h2>
+          <div style="display: flex; flex-direction: column; gap: 6px; font-size: 14px; color: var(--color-neutral-700);">
+            <div>Name, school, and school email</div>
+            <div>Program and graduation year</div>
+            <div>LinkedIn</div>
+            <div>Background — technical, design, product, business, research</div>
+            <div>Why you want to attend</div>
+            <div>Problems you're interested in</div>
+            <div>Track interest, optional</div>
+            <div>Team status</div>
+          </div>
+        </div>
+        <div style="font-size: 13px; line-height: 1.6; color: var(--color-neutral-600);">No account or uploads. Eligibility is confirmed by organizers.</div>
+      </aside>
+
+      <div style="flex: 2 1 420px; min-width: 0;">
+        <sc-if value="{{ hasEmbed }}" hint-placeholder-val="{{ false }}">
+          <iframe src="{{ formUrl }}" title="Application form" style="width: 100%; height: 1100px; border: 1px solid var(--color-divider); background: var(--color-surface);"></iframe>
+        </sc-if>
+        <sc-if value="{{ noEmbed }}" hint-placeholder-val="{{ true }}">
+          <div class="blueprint" style="padding: 64px 40px; display: grid; place-items: center; text-align: center; min-height: 460px; background: repeating-linear-gradient(135deg, transparent 0 11px, color-mix(in srgb, var(--color-accent) 6%, transparent) 11px 12px);">
+            <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+            <div style="max-width: 46ch;">
+              <div style="font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--color-accent-700);">Form slot</div>
+              <h2 style="font-family: var(--font-heading); font-size: 30px; margin: 12px 0 12px;">Airtable form mounts here</h2>
+              <p style="font-size: 14.5px; line-height: 1.65; color: var(--color-neutral-700); margin: 0 0 20px;">Applications run through the Partiful event page until the form is live.</p>
+              <div style="display: flex; gap: 10px; flex-wrap: wrap; justify-content: center;">
+                <a href="https://partiful.com/e/RooXgfy6sLQdTwi53NXi" target="_blank" rel="noopener" class="btn btn-primary" style="text-decoration: none; padding: 12px 24px; font-size: 15px;">Apply on Partiful</a>
+              </div>
+            </div>
+          </div>
+        </sc-if>
+        <div style="margin-top: 24px; padding-top: 20px; border-top: 1px solid var(--color-divider); font-size: 13px; line-height: 1.7; color: var(--color-neutral-600);">By submitting you agree to the <a href="#" onClick="{{ goTerms }}">participation terms</a> — conduct, photography and media, and data use. Responses are seen only by the organizing team.</div>
+      </div>
+    </div>
+
+    <div style="margin-top: 72px; padding: 32px 0; border-top: 1px solid var(--color-divider); display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px;">
+      <div>
+        <div style="font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-neutral-600);">After you submit</div>
+        <p style="font-size: 14.5px; line-height: 1.65; margin: 10px 0 0; color: var(--color-neutral-700);">A confirmation email lands right away. Decisions follow by email — no status portal.</p>
+      </div>
+      <div>
+        <div style="font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-neutral-600);">If accepted</div>
+        <p style="font-size: 14.5px; line-height: 1.65; margin: 10px 0 0; color: var(--color-neutral-700);">An RSVP link, plus team formation details.</p>
+      </div>
+      <div>
+        <div style="font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-neutral-600);">Questions</div>
+        <p style="font-size: 14.5px; line-height: 1.65; margin: 10px 0 0; color: var(--color-neutral-700);">Use the open-ended question in the form. Organizers reply directly.</p>
+      </div>
+    </div>
+  </main>
+  </sc-if>
+
+  <sc-if value="{{ isAbout }}" hint-placeholder-val="{{ false }}">
+  <main style="max-width: 1240px; margin: 0 auto; padding: 84px 28px 0;">
+    <div style="font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--color-accent-700);">Organizers</div>
+    <h1 style="font-family: var(--font-heading); font-weight: 600; font-size: clamp(40px, 6.4vw, 82px); line-height: 0.96; letter-spacing: -0.025em; margin: 22px 0 0; max-width: 22ch;">Run by builders, for builders.</h1>
+    <p style="font-size: 17px; line-height: 1.65; color: var(--color-neutral-700); margin: 32px 0 0; max-width: 62ch;">A build week hosted with the UC Berkeley SCET Innovators-in-Residence DeCal leads and DECODE, the largest founder community across Berkeley and Stanford. Demo Day is an official Tech Week by a16z event.</p>
+
+    
+
+    <div style="margin-top: 72px; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1px;">
+      <div style="background: var(--color-bg); box-shadow: 0 0 0 1px var(--color-divider); padding: 34px 30px;">
+        <div style="font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-accent-700);">Host program</div>
+        <img src="assets/logo-scet.webp" alt="Sutardja Center for Entrepreneurship &amp; Technology" style="height: 44px; width: auto; object-fit: contain; object-position: left center; align-self: flex-start; margin: 18px 0 4px; mix-blend-mode: multiply;">
+        <h2 style="font-family: var(--font-heading); font-size: 26px; margin: 12px 0 10px;">SCET Innovators-in-Residence</h2>
+        <p style="font-size: 14px; line-height: 1.65; color: var(--color-neutral-700); margin: 0;">Berkeley's entrepreneurship center pairs students with practicing founders and operators. Its DeCal leads co-host this event.</p>
+      </div>
+      <div style="background: var(--color-bg); box-shadow: 0 0 0 1px var(--color-divider); padding: 34px 30px;">
+        <div style="font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-accent-700);">Co-host</div>
+        <img src="assets/logo-decode.png" alt="DECODE" style="height: 52px; width: auto; object-fit: contain; object-position: left center; align-self: flex-start; margin: 14px 0 4px; mix-blend-mode: multiply;">
+        <h2 style="font-family: var(--font-heading); font-size: 26px; margin: 12px 0 10px;">DECODE</h2>
+        <p style="font-size: 14px; line-height: 1.65; color: var(--color-neutral-700); margin: 0;">The largest founder community across Berkeley and Stanford, connecting student builders with founders and investors.</p>
+      </div>
+      
+    </div>
+
+    <div class="blueprint" style="margin-top: 56px; padding: 48px 40px; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 36px; align-items: center;">
+      <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+      <div>
+        <h2 style="font-family: var(--font-heading); font-size: clamp(28px, 3.4vw, 42px); line-height: 1.05; letter-spacing: -0.02em; margin: 0;">Partner, judge, or mentor.</h2>
+        <p style="font-size: 15px; line-height: 1.65; color: var(--color-neutral-700); margin: 14px 0 0; max-width: 50ch;">Interested in partnering or co-hosting, judging on Demo Day, or mentoring during build week? Fill out the form and we’ll be in touch.</p>
+      </div>
+      <div style="display: flex; gap: 12px; flex-wrap: wrap; justify-content: flex-end;">
+        <a href="https://forms.gle/nctwEdz5ujgd4yHe9" target="_blank" rel="noopener" class="btn btn-primary" style="text-decoration: none; padding: 13px 26px; font-size: 15px;">Partner, judge, or mentor</a>
+      </div>
+    </div>
+
+    <div style="margin-top: 48px; padding-top: 18px; border-top: 1px solid var(--color-divider); font-size: 13.5px; line-height: 1.7; color: var(--color-neutral-600); max-width: 70ch;">Hosted by a UC Berkeley program and a student founder community; not sponsored by the university. Conduct, photography and media, and data use are covered in the <a href="#" onClick="{{ goTerms }}">participation terms</a>.</div>
+  </main>
+  </sc-if>
+
+  <sc-if value="{{ isTerms }}" hint-placeholder-val="{{ false }}">
+  <main style="max-width: 1240px; margin: 0 auto; padding: 84px 28px 0;">
+    <div style="display: flex; flex-wrap: wrap; gap: 20px 40px; align-items: baseline; justify-content: space-between;">
+      <div>
+        <div style="font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--color-accent-700);">Participation terms</div>
+        <h1 style="font-family: var(--font-heading); font-weight: 600; font-size: clamp(36px, 5.2vw, 66px); line-height: 0.98; letter-spacing: -0.025em; margin: 20px 0 0;">Terms of participation.</h1>
+      </div>
+      <div style="font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-neutral-600);">Innovation Intelligence Hackathon · Fall 2026</div>
+    </div>
+    <p style="font-size: 16px; line-height: 1.7; color: var(--color-neutral-700); margin: 26px 0 0; max-width: 72ch;">Submitting an application confirms your agreement to the terms below. They cover conduct, media, data, intellectual property, and eligibility for the build week of October 5–10 and Demo Day on October 11, 2026.</p>
+
+    <div style="margin-top: 52px; border-top: 2px solid var(--color-text);">
+      <div style="display: grid; grid-template-columns: 56px minmax(0, 1fr); gap: 0 24px; padding: 26px 0; border-bottom: 1px solid var(--color-divider);">
+        <div style="font-family: var(--font-heading); font-size: 13px; letter-spacing: 0.1em; color: var(--color-accent-700); padding-top: 3px;">01</div>
+        <div>
+          <h2 style="font-family: var(--font-heading); font-size: 20px; margin: 0 0 8px;">Conduct</h2>
+          <p style="font-size: 14.5px; line-height: 1.7; color: var(--color-neutral-700); margin: 0; max-width: 74ch;">All participants, mentors, judges, and organizers are expected to behave professionally toward one another. Harassment, discrimination, plagiarism, misrepresentation of work, and interference with another team are grounds for removal from the event at the organizers’ discretion. Concerns may be raised with any organizer during the event or submitted through the application form.</p>
+        </div>
+      </div>
+      <div style="display: grid; grid-template-columns: 56px minmax(0, 1fr); gap: 0 24px; padding: 26px 0; border-bottom: 1px solid var(--color-divider);">
+        <div style="font-family: var(--font-heading); font-size: 13px; letter-spacing: 0.1em; color: var(--color-accent-700); padding-top: 3px;">02</div>
+        <div>
+          <h2 style="font-family: var(--font-heading); font-size: 20px; margin: 0 0 8px;">Photography and media</h2>
+          <p style="font-size: 14.5px; line-height: 1.7; color: var(--color-neutral-700); margin: 0; max-width: 74ch;">The event is photographed and recorded. Images, video, and audio captured during build week and Demo Day may be used in event recaps, program materials, and partner communications, and may include team names and project summaries. Participants who prefer not to appear in published media may notify an organizer at any time and will be excluded.</p>
+        </div>
+      </div>
+      <div style="display: grid; grid-template-columns: 56px minmax(0, 1fr); gap: 0 24px; padding: 26px 0; border-bottom: 1px solid var(--color-divider);">
+        <div style="font-family: var(--font-heading); font-size: 13px; letter-spacing: 0.1em; color: var(--color-accent-700); padding-top: 3px;">03</div>
+        <div>
+          <h2 style="font-family: var(--font-heading); font-size: 20px; margin: 0 0 8px;">Data and privacy</h2>
+          <p style="font-size: 14.5px; line-height: 1.7; color: var(--color-neutral-700); margin: 0; max-width: 74ch;">Application responses are accessible only to the organizing team and are used solely to evaluate applications and operate the event. Data is not sold or shared with third parties for marketing purposes. Participants may request deletion of their application data after the event.</p>
+        </div>
+      </div>
+      <div style="display: grid; grid-template-columns: 56px minmax(0, 1fr); gap: 0 24px; padding: 26px 0; border-bottom: 1px solid var(--color-divider);">
+        <div style="font-family: var(--font-heading); font-size: 13px; letter-spacing: 0.1em; color: var(--color-accent-700); padding-top: 3px;">04</div>
+        <div>
+          <h2 style="font-family: var(--font-heading); font-size: 20px; margin: 0 0 8px;">Intellectual property</h2>
+          <p style="font-size: 14.5px; line-height: 1.7; color: var(--color-neutral-700); margin: 0; max-width: 74ch;">Participants retain full ownership of all work created during the event. No rights are transferred to the organizers, host programs, or partners. Organizers may publicly reference a project by name with a brief summary as part of event coverage.</p>
+        </div>
+      </div>
+      <div style="display: grid; grid-template-columns: 56px minmax(0, 1fr); gap: 0 24px; padding: 26px 0; border-bottom: 1px solid var(--color-divider);">
+        <div style="font-family: var(--font-heading); font-size: 13px; letter-spacing: 0.1em; color: var(--color-accent-700); padding-top: 3px;">05</div>
+        <div>
+          <h2 style="font-family: var(--font-heading); font-size: 20px; margin: 0 0 8px;">Eligibility and submissions</h2>
+          <p style="font-size: 14.5px; line-height: 1.7; color: var(--color-neutral-700); margin: 0; max-width: 74ch;">Participation is open to current students and recent graduates. Teams may include one to four members. Projects must be developed during the build week of October 5–10; pre-existing code, open-source libraries, and AI tools are permitted. Submissions close at 11:59 PM on October 10. Demo Day attendance is in person at UC Berkeley.</p>
+        </div>
+      </div>
+      <div style="display: grid; grid-template-columns: 56px minmax(0, 1fr); gap: 0 24px; padding: 26px 0; border-bottom: 1px solid var(--color-divider);">
+        <div style="font-family: var(--font-heading); font-size: 13px; letter-spacing: 0.1em; color: var(--color-accent-700); padding-top: 3px;">06</div>
+        <div>
+          <h2 style="font-family: var(--font-heading); font-size: 20px; margin: 0 0 8px;">Changes</h2>
+          <p style="font-size: 14.5px; line-height: 1.7; color: var(--color-neutral-700); margin: 0; max-width: 74ch;">Schedule, format, judging panel, and awards are subject to change. Material changes will be communicated by email to accepted participants.</p>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top: 36px; display: flex; flex-wrap: wrap; gap: 16px 40px; justify-content: space-between; font-size: 12.5px; color: var(--color-neutral-600);">
+      <div>Last updated September 2026. Questions may be submitted through the application form.</div>
+      <div>Hosted with SCET Innovators-in-Residence and DECODE.</div>
+    </div>
+  </main>
+  </sc-if>
+
+  <footer style="margin-top: 128px; border-top: 1px solid var(--color-divider);">
+    <div style="max-width: 1240px; margin: 0 auto; padding: 44px 28px 20px; display: flex; flex-wrap: wrap; gap: 28px 48px; align-items: baseline; justify-content: space-between;">
+      <div style="font-family: var(--font-heading); font-weight: 600; font-size: 20px; text-transform: uppercase; letter-spacing: -0.01em;">Innovation Intelligence</div>
+      <div style="display: flex; flex-wrap: wrap; gap: 8px 24px; font-size: 13.5px;">
+        <a href="#tracks" onClick="{{ goTracks }}" style="text-decoration: none; color: var(--color-neutral-700);">Tracks</a>
+        <a href="#format" onClick="{{ goFormat }}" style="text-decoration: none; color: var(--color-neutral-700);">Format</a>
+        <a href="#judging" onClick="{{ goJudging }}" style="text-decoration: none; color: var(--color-neutral-700);">Judging</a>
+        <a href="#faq" onClick="{{ goFaq }}" style="text-decoration: none; color: var(--color-neutral-700);">FAQ</a>
+        <a href="#" onClick="{{ goAbout }}" style="text-decoration: none; color: var(--color-neutral-700);">Organizers</a>
+        <a href="https://forms.gle/nctwEdz5ujgd4yHe9" target="_blank" rel="noopener" style="text-decoration: none; color: var(--color-neutral-700);">Partner or judge</a>
+        <a href="#" onClick="{{ goTerms }}" style="text-decoration: none; color: var(--color-neutral-700);">Participation terms</a>
+        <a href="https://partiful.com/e/RooXgfy6sLQdTwi53NXi" target="_blank" rel="noopener" style="text-decoration: none; color: var(--color-neutral-700);">Apply</a>
+      </div>
+    </div>
+    <div style="max-width: 1240px; margin: 0 auto; padding: 0 28px 40px; font-size: 12px; line-height: 1.6; color: var(--color-neutral-500);">Berkeley, CA · Build week Oct 5–10 · Demo Day Sunday, October 11, 1–4 PM · An official SF Tech Week community event. By joining, you agree to the <a href="#" onClick="{{ goTerms }}">participation terms</a>.</div>
+  </footer>
+
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;formUrl&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Application&quot;}}">
+class Component extends DCLogic {
+  state = { route: "home", now: Date.now() };
+  target = new Date("2026-10-11T13:00:00-07:00").getTime();
+
+  componentDidMount() {
+    this.timer = setInterval(() => this.setState({ now: Date.now() }), 1000);
+    this.reveal();
+  }
+  componentDidUpdate() { this.reveal(); }
+  componentWillUnmount() { clearInterval(this.timer); if (this.io) this.io.disconnect(); }
+
+  reveal() {
+    if (!("IntersectionObserver" in window)) return;
+    if (!this.io) {
+      this.io = new IntersectionObserver((entries) => {
+        entries.forEach((en) => {
+          if (en.isIntersecting) {
+            en.target.style.animation = "riseIn 620ms cubic-bezier(.16,.84,.44,1) both";
+            this.io.unobserve(en.target);
+          }
+        });
+      }, { rootMargin: "0px 0px -12% 0px" });
+    }
+    requestAnimationFrame(() => {
+      document.querySelectorAll("[data-reveal]:not([data-revealed])").forEach((el) => {
+        el.setAttribute("data-revealed", "1");
+        el.style.opacity = "0";
+        this.io.observe(el);
+      });
+    });
+  }
+
+  pad(n) { return n < 10 ? "0" + n : String(n); }
+  go(route) {
+    return (e) => {
+      if (e) e.preventDefault();
+      this.setState({ route });
+      window.scrollTo(0, 0);
+    };
+  }
+  goSec(id) {
+    return (e) => {
+      if (e) e.preventDefault();
+      const jump = () => {
+        const el = document.getElementById(id);
+        if (el) window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - 76, behavior: "smooth" });
+      };
+      if (this.state.route !== "home") this.setState({ route: "home" }, () => setTimeout(jump, 40));
+      else jump();
+    };
+  }
+  renderVals() {
+    const r = this.state.route;
+    const url = (this.props.formUrl || "").trim();
+    const left = Math.max(0, this.target - this.state.now);
+    const s = Math.floor(left / 1000);
+    return {
+      cdDays: this.pad(Math.floor(s / 86400)),
+      cdHours: this.pad(Math.floor((s % 86400) / 3600)),
+      cdMins: this.pad(Math.floor((s % 3600) / 60)),
+      cdSecs: this.pad(s % 60),
+      isHome: r === "home",
+      isApply: r === "apply",
+      isAbout: r === "about",
+      isTerms: r === "terms",
+      hasEmbed: !!url,
+      noEmbed: !url,
+      formUrl: url,
+      goHome: this.go("home"),
+      goApply: this.go("apply"),
+      goAbout: this.go("about"),
+      goTerms: this.go("terms"),
+      goThesis: this.goSec("thesis"),
+      goTracks: this.goSec("tracks"),
+      goFormat: this.goSec("format"),
+      goPrizes: this.goSec("prizes"),
+      goJudging: this.goSec("judging"),
+      goFaq: this.goSec("faq")
+    };
+  }
+}
+</script>
+</body>
+</html>
